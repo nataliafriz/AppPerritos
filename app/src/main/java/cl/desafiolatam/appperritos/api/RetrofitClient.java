@@ -19,6 +19,7 @@ public class RetrofitClient {
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
-        return  retrofit.create(Api.class);
+       Api api = retrofit.create(Api.class);
+        return api;
     }
     }

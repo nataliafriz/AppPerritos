@@ -3,21 +3,21 @@ package cl.desafiolatam.appperritos.model;
 import java.util.List;
 import java.util.Map;
 
-public class ListBreeds {
+public class Breeds {
 
-    private Map<String, ListBreeds> message;
+    private List<String> message;
     private String status;
 
-    public ListBreeds(Map<String, ListBreeds> message, String status) {
+    public Breeds(List<String> message, String status) {
         this.message = message;
         this.status = status;
     }
 
-    public Map<String, ListBreeds> getMessage() {
+    public List<String> getMessage() {
         return message;
     }
 
-    public void setMessage(Map<String, ListBreeds> message) {
+    public void setMessage(List<String> message) {
         this.message = message;
     }
 
@@ -29,11 +29,11 @@ public class ListBreeds {
         this.status = status;
     }
 
+    @Override
     public String toString() {
         return "ListBreeds{" +
-                "message='" + message + '\'' +
-                ", status" + status +
+                "message=" + message +
+                ", status='" + status + '\'' +
                 '}';
-
     }
 }
