@@ -33,7 +33,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageVH> {
     @Override
     public ImageVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-       View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_image,parent,false);
+       View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list,parent,false);
 
         return new ImageVH(view);
     }
@@ -41,9 +41,9 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageVH> {
     @Override
     public void onBindViewHolder(@NonNull ImageVH holder, int position) {
 
-        String imagenBreeds = image.get(position);
-        Log.d(TAG, "onBindViewHolder: "+ imagenBreeds);
-        holder.bind(imagenBreeds);
+        String imageBreeds = image.get(position);
+        Log.d(TAG, "onBindViewHolder: "+ imageBreeds);
+        holder.bind(imageBreeds);
 
     }
 
@@ -68,7 +68,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageVH> {
 
         public void bind(String i) {
 
-            Glide.with(context).load(i).into(imageBreeds);
+
         }
     }
 }

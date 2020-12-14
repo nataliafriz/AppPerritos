@@ -5,29 +5,26 @@ import java.util.List;
 import cl.desafiolatam.appperritos.model.PresenterRepository;
 import cl.desafiolatam.appperritos.model.Repository;
 
-public class Presenter implements PresenterRepository {
+public class PresenterImage implements PresenterRepository {
 
-    PresenterView view;
+    PresenterViewImage viewImage;
     Repository repository;
 
-    public Presenter(PresenterView view, Repository repository) {
-        this.view = view;
+    public PresenterImage(PresenterViewImage viewImage, Repository repository) {
+        this.viewImage = viewImage;
         this.repository = repository;
         repository.setPresenterRepository(this);
-        repository.loadInfo();
+        repository.loadInfoImage();
     }
-
 
     @Override
     public void showInfo(List<String> breedsOfList) {
-        view.showInfo(breedsOfList);
+
     }
 
     @Override
     public void showInfoImage(List<String> imageListBreeds) {
+        viewImage.showInfoImage(imageListBreeds);
 
     }
-
-
 }
-

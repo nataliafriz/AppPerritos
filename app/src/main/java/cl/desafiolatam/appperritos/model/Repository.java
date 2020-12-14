@@ -20,8 +20,8 @@ public class Repository {
 
     }
 
-    public void loadInfo() {
-        RetrofitClient.getRetrofitInstance().getAllBreeds().enqueue(new Callback<Breeds>() {
+    public List<String> loadInfo() {
+       RetrofitClient.getRetrofitInstance().getAllBreeds().enqueue(new Callback<Breeds>() {
             @Override
             public void onResponse(Call<Breeds> call, Response<Breeds> response) {
                 Log.d(TAG, "onResponse: " + response.body());
@@ -36,6 +36,27 @@ public class Repository {
                 Log.d(TAG, "onFailure: " + t.toString());
             }
         });
+        return null;
     }
 
+    public void loadInfoImage () {
+       /* RetrofitClient.getRetrofitInstance().getImageBreeds().enqueue(new Callback<ImageBreeds>() {
+            @Override
+            public void onResponse(Call<ImageBreeds> call, Response<ImageBreeds> response1) {
+                Log.d(TAG, "onResponse: image " + response1.body());
+                List<String> imageListBreeds = new ArrayList<>();
+                imageListBreeds.add(response1.body().getStatusImage());
+                presenterRepository.showInfoImage(imageListBreeds);
+
+            }
+
+            @Override
+            public void onFailure(Call<ImageBreeds> call, Throwable x) {
+                Log.d(TAG, "onFailure: " + x.toString());
+
+
+            }
+        });*/
+    }
 }
+
